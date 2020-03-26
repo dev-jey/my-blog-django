@@ -1,0 +1,937 @@
+{% extends 'blog/base.html' %}
+{% block title %}CSS Tutorials{% endblock %}
+
+{% block body_block %}
+
+
+
+<!-- Preloader  -->
+<div class="preloader-wrapper">
+    <div class="preloader">
+        <div class="preloader-circle" id="status">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<!-- Preloader end -->
+
+<main class="kavya-home-2">
+    <!-- Header -->
+    <header>
+        <!-- Navbar -->
+        <nav>
+            <div class=" kavya-navbar-2 kavya-navbar" id="sticky-top">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col order-2 col-lg-2 ">
+                            <div class="brand-name">
+                                <a href="index.html">
+                                    <h1>Dev-Jey</h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col col-lg-8 order-1 order-lg-2">
+                            <span class="navbar-toggle" id="navbar-toggle">
+                                <i class="fas fa-bars"></i>
+                            </span>
+                            <ul class="nav-menu ml-auto mr-auto" id="nav-menu-toggle">
+                                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Categories <span class="arrow-icon">
+                                            <span class="left-bar"></span>
+                                            <span class="right-bar"></span></span>
+                                    </a>
+                                    <ul class="drop-menu">
+                                        <li class="drop-menu-item"><a href="archive-right-sidebar.html">Food</a></li>
+                                        <li class="drop-menu-item"><a href="archive-right-sidebar.html">Technology</a>
+                                        </li>
+                                        <li class="drop-menu-item"><a href="archive-right-sidebar.html">Fashion</a></li>
+                                        <li class="drop-menu-item"><a href="archive-right-sidebar.html">Women</a></li>
+                                        <li class="drop-menu-item"><a href="archive-right-sidebar.html">Lifestyle</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item drop-arrow"><a href="#" class="nav-link">Pages <span
+                                            class="arrow-icon"> <span class="left-bar"></span>
+                                            <span class="right-bar"></span></span></a>
+                                    <ul class="drop-menu">
+                                        <li class="drop-menu-item"><a href="index.html">Home Page 1</a></li>
+                                        <li class="drop-menu-item"><a href="index2.html">Home Page 2</a></li>
+                                        <li class="drop-menu-item"><a href="index3.html">Home Page 3</a></li>
+                                        <li class="drop-menu-item"><a href="404.html">404 error page with image</a></li>
+                                        <li class="drop-menu-item"><a href="404-text.html">404 error page text only</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item drop-arrow"><a href="#" class="nav-link">Layout <span
+                                            class="arrow-icon"> <span class="left-bar"></span>
+                                            <span class="right-bar"></span></span></a>
+                                    <ul class="drop-menu">
+                                        <li class="drop-menu-item"><a href="archive-right-sidebar.html">Archive Right
+                                                sidebar</a></li>
+                                        <li class="drop-menu-item"><a href="archive-left-sidebar.html">Archive Left
+                                                sidebar</a></li>
+                                        <li class="drop-menu-item"><a href="archive-no-sidebar.html">Archive No
+                                                sidebar</a></li>
+                                        <li class="drop-menu-item"><a href="single-no-sidebar.html">Single Page No
+                                                sidebar</a></li>
+                                        <li class="drop-menu-item"><a href="single-right-sidebar.html">Single Page Right
+                                                sidebar</a></li>
+                                        <li class="drop-menu-item"><a href="search.html">Search Page</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-lg-2 order-3">
+                            <div class="search-wrapper">
+                                <div class="search-icon">
+                                    <button class="open-search-btn"><i class="fa fa-search"></i></button>
+                                </div>
+                                <div class="sidebar-icon">
+                                    <button class="sidebar-btn"> <i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar end -->
+
+        <!-- Search overlay -->
+        <div id="search-overlay" class="search-section">
+            <span class="closebtn"><i class="fas fa-times"></i></span>
+            <div class="overlay-content">
+                <form>
+                    <input type="text" placeholder="Search here" name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <!-- Search overlay end -->
+
+        <!-- Sticky sidebar -->
+        <div class="sticky-sidebar">
+            <div class="sticky-sidebar-content">
+                <div class="close-sidebar ml-auto">
+                    <i class="fas fa-times"></i>
+                </div>
+                <h3>About the Author</h3>
+
+                <div class="author-img">
+                    <img src="assets/images/author.jpg" alt="">
+                </div>
+                <div class="author-desc">
+                    <h5 class="mb-2">Julie Ryan</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequuntur vel quo, quae
+                        aliquam esse
+                        facere eveniet magnam rerum! Quo itaque ipsa a ipsum quaerat optio illo ducimus dolores in!</p>
+                </div>
+                <div class="circular-icons social-links">
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="author-posts">
+                    <h3>Most viewed</h3>
+                    <div class="card mb-4">
+                        <div class="row no-gutters">
+                            <div class="col-4 col-md-4">
+                                <a href="single-no-sidebar.html">
+                                    <img src="assets/images/time.jpg" class="card-img" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8 col-md-8">
+                                <div class="card-body">
+                                    <ul class="category-tag-list">
+
+                                        <li class="category-tag-name">
+                                            <a href="#">Lifestyle</a>
+                                        </li>
+                                    </ul>
+                                    <h5 class="card-title title-font"><a href="single-no-sidebar.html">Making time for
+                                            travel</a>
+                                    </h5>
+                                    <div class="author-date">
+
+                                        <a class="date" href="#">
+                                            <span>21 Dec, 2019</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="row no-gutters">
+                            <div class="col-4 col-md-4">
+                                <a href="single-no-sidebar.html">
+                                    <img src="assets/images/alone.jpg" class="card-img" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8 col-md-8">
+                                <div class="card-body">
+                                    <ul class="category-tag-list">
+                                        <li class="category-tag-name">
+                                            <a href="#">Lifestyle</a>
+                                        </li>
+                                    </ul>
+                                    <h5 class="card-title title-font"><a href="single-no-sidebar.html">It's okay to be
+                                            alone
+                                            sometimes</a>
+                                    </h5>
+                                    <div class="author-date">
+                                        <a class="date" href="#">
+                                            <span>21 Dec, 2019</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="row no-gutters">
+                            <div class="col-4 col-md-4">
+                                <a href="single-no-sidebar.html">
+                                    <img src="assets/images/forest.jpg" class="card-img" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8 col-md-8">
+                                <div class="card-body">
+                                    <ul class="category-tag-list">
+                                        <li class="category-tag-name">
+                                            <a href="#">travel</a>
+                                        </li>
+                                    </ul>
+                                    <h5 class="card-title title-font"><a href="single-no-sidebar.html">Conserve
+                                            Forest</a>
+                                    </h5>
+                                    <div class="author-date">
+                                        <a class="date" href="#">
+                                            <span>21 Dec, 2019</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="row no-gutters">
+                            <div class="col-4 col-md-4">
+                                <a href="single-no-sidebar.html">
+                                    <img src="assets/images/beach-sea.jpg" class="card-img" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8 col-md-8">
+                                <div class="card-body">
+                                    <ul class="category-tag-list">
+                                        <li class="category-tag-name">
+                                            <a href="#">Lifestyle</a>
+                                        </li>
+                                    </ul>
+                                    <h5 class="card-title title-font"><a href="single-no-sidebar.html">Beach is my
+                                            favourite place</a>
+                                    </h5>
+                                    <div class="author-date">
+                                        <a class="date" href="#">
+                                            <span>21 Dec, 2019</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sticky sidebar end -->
+
+        <div class="body-overlay"></div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Banner section -->
+    <section class="banner-section">
+        <div class="container">
+            <div class="banner-carousel">
+                <div class="banner-item">
+                    <div class="card">
+                        <a href="single-no-sidebar.html"><img src="assets/images/holidays.jpg" class="card-img"
+                                alt="" /></a>
+                        <div class="card-img-overlay banner-text">
+                            <ul class="category-tag-list">
+                                <li class="category-tag-name">
+                                    <a href="#">Lifestyle</a>
+                                </li>
+                            </ul>
+                            <h5 class="card-title title-font">
+                                <a href="single-no-sidebar.html">Spend your holidays in a productive way</a>
+                            </h5>
+                            <p class="card-text mb-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                                nostrum eum, cum ab iusto error totam quae nemo dicta nesciunt
+                                quo earum ipsam, ex aspernatur.
+                            </p>
+                            <a href="single-no-sidebar.html" class="btn btn-solid btn-read">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <div class="card">
+                        <a href="single-no-sidebar.html"><img src="assets/images/blonde-girl.jpg" class="card-img"
+                                alt="" /></a>
+                        <div class="card-img-overlay banner-text">
+                            <ul class="category-tag-list">
+
+                                <li class="category-tag-name">
+                                    <a href="#">Lifestyle</a>
+                                </li>
+                            </ul>
+                            <h5 class="card-title title-font">
+                                <a href="single-no-sidebar.html">Why alone time is a must for your mental health</a>
+                            </h5>
+                            <p class="card-text mb-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                                nostrum eum, cum ab iusto error totam quae nemo dicta nesciunt
+                                quo earum ipsam, ex aspernatur.
+                            </p>
+                            <a href="single-no-sidebar.html" class="btn btn-solid btn-read">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <div class="card">
+                        <a href="single-no-sidebar.html"><img src="assets/images/london.jpg" class="card-img"
+                                alt="" /></a>
+                        <div class="card-img-overlay banner-text">
+                            <ul class="category-tag-list">
+                                <li class="category-tag-name">
+                                    <a href="#">Travel</a>
+                                </li>
+                            </ul>
+                            <h5 class="card-title title-font">
+                                <a href="single-no-sidebar.html">Get ready for December Adventures</a>
+                            </h5>
+                            <p class="card-text mb-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                                nostrum eum, cum ab iusto error totam quae nemo dicta nesciunt
+                                quo earum ipsam, ex aspernatur.
+                            </p>
+                            <a href="single-no-sidebar.html" class="btn btn-solid btn-read">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner section end -->
+
+    <!-- Featured posts -->
+    <section class="featured-posts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured posts</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card simple-overlay-card">
+                        <a href="single-no-sidebar.html"><img src="assets/images/orange-bus.jpg" class="card-img"
+                                alt="" /></a>
+                        <div class="card-img-overlay">
+                            <ul class="category-tag-list">
+                                <li class="category-tag-name">
+                                    <a href="#">Lifestyle</a>
+                                </li>
+                            </ul>
+                            <h5 class="card-title title-font">
+                                <a href="single-no-sidebar.html">10 ideas for travelling more</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card simple-overlay-card">
+                        <a href="single-no-sidebar.html"><img src="assets/images/umbrella.jpg" class="card-img"
+                                alt="" /></a>
+                        <div class="card-img-overlay">
+                            <ul class="category-tag-list">
+
+                                <li class="category-tag-name">
+                                    <a href="#">Lifestyle</a>
+                                </li>
+                            </ul>
+                            <h5 class="card-title title-font">
+                                <a href="single-no-sidebar.html">Top 10 tips with common lifestyles</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card simple-overlay-card">
+                        <a href="single-no-sidebar.html"><img src="assets/images/streets.jpg" class="card-img"
+                                alt="" /></a>
+                        <div class="card-img-overlay">
+                            <ul class="category-tag-list">
+                                <li class="category-tag-name">
+                                    <a href="#">Travel</a>
+                                </li>
+                            </ul>
+                            <h5 class="card-title title-font">
+                                <a href="single-no-sidebar.html">Beautiful streets of village</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card simple-overlay-card">
+                        <a href="single-no-sidebar.html"><img src="assets/images/woman-alone.jpg" class="card-img "
+                                alt="" /></a>
+                        <div class="card-img-overlay">
+                            <ul class="category-tag-list">
+                                <li class="category-tag-name">
+                                    <a href="#">Lifestyle</a>
+                                </li>
+                            </ul>
+                            <h5 class="card-title title-font">
+                                <a href="single-no-sidebar.html">Never suffer from being lonely again
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features posts end -->
+
+    <!-- Popular posts -->
+    <section class="popular-posts section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Posts</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-7 col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <a href="single-no-sidebar.html">
+                                    <img src="assets/images/bus.jpg" class="card-img-top" alt="" />
+                                </a>
+
+                                <div class="card-body px-0">
+                                    <ul class="category-tag-list">
+                                        <li class="category-tag-name">
+                                            <a href="#">Lifestyle</a>
+                                        </li>
+                                    </ul>
+                                    <h5 class="card-title title-font">
+                                        <a href="single-no-sidebar.html">
+                                            Lies And Damn Lies About HIPPIE
+                                        </a>
+                                    </h5>
+                                    <div class="author-date">
+                                        <a class="author" href="#">
+                                            <img src="assets/images/writer.jpg" alt="" class="rounded-circle" />
+                                            <span class="writer-name-small">Julie</span>
+                                        </a>
+                                        <a class="date" href="#">
+                                            <span>21 Dec, 2019</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <a href="single-no-sidebar.html">
+                                    <img src="assets/images/city-pink.jpg" class="card-img-top" alt="" />
+                                </a>
+
+                                <div class="card-body px-0">
+                                    <ul class="category-tag-list">
+                                        <li class="category-tag-name">
+                                            <a href="#">Travel</a>
+                                        </li>
+                                        <li class="category-tag-name">
+                                            <a href="#">Lifestyle</a>
+                                        </li>
+                                    </ul>
+                                    <h5 class="card-title title-font">
+                                        <a href="single-no-sidebar.html">
+                                            Remember before moving to a new city</a>
+                                    </h5>
+                                    <div class="author-date">
+                                        <a class="author" href="#">
+                                            <img src="assets/images/writer.jpg" alt="" class="rounded-circle" />
+                                            <span class="writer-name-small">Julie</span>
+                                        </a>
+                                        <a class="date" href="#">
+                                            <span>21 Dec, 2019</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <a href="single-no-sidebar.html">
+                                    <img src="assets/images/alone.jpg" class="card-img-top" alt="" />
+                                </a>
+                                <div class="card-body px-0">
+                                    <ul class="category-tag-list">
+                                        <li class="category-tag-name">
+                                            <a href="#">Travel</a>
+                                        </li>
+                                    </ul>
+
+                                    <h5 class="card-title title-font">
+                                        <a href="single-no-sidebar.html">
+                                            How roaming around is good for you</a>
+                                    </h5>
+                                    <div class="author-date">
+                                        <a class="author" href="#">
+                                            <img src="assets/images/writer.jpg" alt="" class="rounded-circle" />
+                                            <span class="writer-name-small">Julie</span>
+                                        </a>
+                                        <a class="date" href="#">
+                                            <span>21 Dec, 2019</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <a href="single-no-sidebar.html">
+                                    <img src="assets/images/paris.jpg" class="card-img-top" alt="" />
+                                </a>
+
+                                <div class="card-body px-0">
+                                    <ul class="category-tag-list">
+                                        <li class="category-tag-name">
+                                            <a href="#">Travel</a>
+                                        </li>
+                                    </ul>
+
+                                    <h5 class="card-title title-font">
+                                        <a href="single-no-sidebar.html">
+                                            5 things you should not miss about Paris</a>
+                                    </h5>
+                                    <div class="author-date">
+                                        <a class="author" href="#">
+                                            <img src="assets/images/writer.jpg" alt="" class="rounded-circle" />
+                                            <span class="writer-name-small">Julie</span>
+                                        </a>
+                                        <a class="date" href="#">
+                                            <span>21 Dec, 2019</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="sidebar-posts">
+                        <div class="sidebar-title">
+                            <h5><i class="fas fa-circle"></i> Recent Posts</h5>
+                        </div>
+                        <div class="sidebar-content author-posts">
+                            <div class="card mb-3">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-4 col-md-4">
+                                        <a href="single-no-sidebar.html">
+                                            <img src="assets/images/alone-house.jpg" class="card-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-8 col-md-8">
+                                        <div class="card-body">
+                                            <ul class="category-tag-list mb-0">
+                                                <li class="category-tag-name">
+                                                    <a href="#">Lifestyle</a>
+                                                </li>
+                                            </ul>
+                                            <h5 class="card-title title-font"><a href="single-no-sidebar.html">Abandon
+                                                    Houses</a>
+                                            </h5>
+                                            <div class="author-date">
+                                                <a class="date" href="#">
+                                                    <span>21 Dec, 2019</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-4 col-md-4">
+                                        <a href="single-no-sidebar.html">
+                                            <img src="assets/images/time.jpg" class="card-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-8 col-md-8">
+                                        <div class="card-body">
+                                            <ul class="category-tag-list mb-0">
+                                                <li class="category-tag-name">
+                                                    <a href="#">Lifestyle</a>
+                                                </li>
+                                            </ul>
+                                            <h5 class="card-title title-font"><a href="single-no-sidebar.html">Making
+                                                    time for travel</a>
+                                            </h5>
+                                            <div class="author-date">
+                                                <a class="date" href="#">
+                                                    <span>21 Dec, 2019</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-4 col-md-4">
+                                        <a href="single-no-sidebar.html">
+                                            <img src="assets/images/beach-sea.jpg" class="card-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-8 col-md-8">
+                                        <div class="card-body">
+                                            <ul class="category-tag-list mb-0">
+                                                <li class="category-tag-name">
+                                                    <a href="#">Lifestyle</a>
+                                                </li>
+                                            </ul>
+                                            <h5 class="card-title title-font"><a href="single-no-sidebar.html">Making
+                                                    time for travel</a>
+                                            </h5>
+                                            <div class="author-date">
+                                                <a class="date" href="#">
+                                                    <span>21 Dec, 2019</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-4 col-md-4">
+                                        <a href="single-no-sidebar.html">
+                                            <img src="assets/images/taj.jpg" class="card-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-8 col-md-8">
+                                        <div class="card-body">
+                                            <ul class="category-tag-list mb-0">
+                                                <li class="category-tag-name">
+                                                    <a href="#">photography</a>
+                                                </li>
+                                            </ul>
+                                            <h5 class="card-title title-font"><a href="single-no-sidebar.html">Super
+                                                    easy ways to learn
+                                                    everything about
+                                                    photography</a>
+                                            </h5>
+                                            <div class="author-date">
+                                                <a class="date" href="#">
+                                                    <span>21 Dec, 2019</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popular-tags">
+                            <div class="sidebar-title">
+                                <h5><i class="fas fa-circle"></i>Popular tags</h5>
+                            </div>
+                            <div class="sidebar-content">
+                                <ul class="sidebar-list tags-list">
+                                    <li><a href="#">Food</a></li>
+                                    <li><a href="#">Technology</a></li>
+                                    <li><a href="#">UI/UX</a></li>
+                                    <li><a href="#">Diet
+                                        </a></li>
+                                    <li><a href="#">Lovelife</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                    <li><a href="#">Popular</a></li>
+                                    <li><a href="#">health</a></li>
+                                    <li><a href="#">VisitNepal</a></li>
+                                    <li><a href="#">travel</a></li>
+                                    <li><a href="#">freelance</a></li>
+                                    <li><a href="#">leadership</a></li>
+                                    <li><a href="#">happiness</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Popular posts end -->
+
+    <!-- Kavya Posts -->
+    <section class="kavya-posts">
+        <div class="container">
+            <div class="section-title">
+                <h2>More from Kavya</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-7 col-lg-8">
+                    <div class="posts-wrapper">
+                        <div class="card mb-4 long-card">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-lg-6">
+                                    <a href="single-no-sidebar.html">
+                                        <img src="assets/images/taj.jpg" class="card-img" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <ul class="category-tag-list">
+                                            <li class="category-tag-name">
+                                                <a href="#">Lifestyle</a>
+                                            </li>
+                                        </ul>
+                                        <h5 class="card-title title-font"><a href="single-no-sidebar.html">5 secrets you
+                                                don't know about
+                                                Taj Mahal</a>
+                                        </h5>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            Exercitationem
+                                            laborum laudantium nemo blanditiis voluptatem obcaecati, saepe explicabo
+                                            quaerat et tempora
+                                            incidunt facilis commodi enim, consectetur molestiae vitae ea necessitatibus
+                                            sequi harum neque.
+                                            In delectus possimus saepe dicta. Commodi unde dolorum neque cumque maiores
+                                            repellendus, est ad
+                                            dicta, et optio obcaecati laboriosam?</p>
+                                        <a href="single-no-sidebar.html" class="btn btn-solid btn-read my-3">Read
+                                            More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="instagram-posts">
+                        <div class="sidebar-title">
+                            <h5><i class="fas fa-circle"></i>Instagram Posts</h5>
+                        </div>
+                        <div class="sidebar-content">
+                            <div class="row no-gutters">
+                                <div class="col-6 col-md-6">
+                                    <div class="image-item insta-item">
+                                        <a href="#"> <img src="assets/images/beautiful-girl.jpg" alt=""></a>
+                                        <a href="#">
+                                            <div class="image-hover">
+                                                <i class="fas fa-heart"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <div class="image-item insta-item">
+                                        <a href="#"> <img src="assets/images/lighthouse.jpg" alt=""></a>
+                                        <a href="#">
+                                            <div class="image-hover">
+                                                <i class="fas fa-heart"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <div class="image-item insta-item">
+                                        <a href="#"><img src="assets/images/travel-man.jpg" alt=""></a>
+                                        <a href="#">
+                                            <div class="image-hover">
+                                                <i class="fas fa-heart"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <div class="image-item insta-item">
+                                        <a href="#"> <img src="assets/images/blonde-girl.jpg" alt=""></a>
+                                        <a href="#">
+                                            <div class="image-hover">
+                                                <i class="fas fa-heart"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <div class="image-item insta-item">
+                                        <a href="#"><img src="assets/images/biker.jpg" alt=""></a>
+                                        <a href="#">
+                                            <div class="image-hover">
+                                                <i class="fas fa-heart"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <div class="image-item insta-item">
+                                        <a href="#"> <img src="assets/images/shoes.jpg" alt=""></a>
+                                        <a href="#">
+                                            <div class="image-hover">
+                                                <i class="fas fa-heart"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="insta-link">
+                                        <a href="#" target="_blank" class=" btn-solid">Follow us <i
+                                                class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more-posts">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card small-card simple-overlay-card">
+                            <a href="single-no-sidebar.html"><img src="assets/images/boat.jpg" class="card-img"
+                                    alt="" /></a>
+                            <div class="card-img-overlay">
+                                <ul class="category-tag-list mb-0">
+                                    <li class="category-tag-name">
+                                        <a href="#">Lifestyle</a>
+                                    </li>
+                                </ul>
+                                <h5 class="card-title title-font">
+                                    <a href="single-no-sidebar.html">Beyond the sea</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card small-card simple-overlay-card">
+                            <a href="single-no-sidebar.html"><img src="assets/images/lights.jpg" class="card-img"
+                                    alt="" /></a>
+                            <div class="card-img-overlay">
+                                <ul class="category-tag-list mb-0">
+                                    <li class="category-tag-name">
+                                        <a href="#">Travel</a>
+                                    </li>
+                                </ul>
+                                <h5 class="card-title title-font">
+                                    <a href="single-no-sidebar.html">The city of lights</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card small-card simple-overlay-card">
+                            <a href="single-no-sidebar.html"><img src="assets/images/air-ballon.jpg" class="card-img"
+                                    alt="" /></a>
+                            <div class="card-img-overlay">
+                                <ul class="category-tag-list mb-0">
+                                    <li class="category-tag-name">
+                                        <a href="#">Lifestyle</a>
+                                    </li>
+                                </ul>
+                                <h5 class="card-title title-font">
+                                    <a href="single-no-sidebar.html">Why hot air ballons are getting popular</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card small-card simple-overlay-card">
+                            <a href="single-no-sidebar.html"><img src="assets/images/woods.jpg" class="card-img"
+                                    alt="" /></a>
+                            <div class="card-img-overlay">
+                                <ul class="category-tag-list mb-0">
+                                    <li class="category-tag-name">
+                                        <a href="#">Travel</a>
+                                    </li>
+                                </ul>
+                                <h5 class="card-title title-font">
+                                    <a href="single-no-sidebar.html">You will get lost in these woods</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Kavya Posts end -->
+
+    <!-- Footer section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content-2">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <h5 class="brand-name">Kavya</h5>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="archive-right-sidebar.html">Food</a></li>
+                        <li><a href="archive-right-sidebar.html">Travel</a></li>
+                        <li><a href="archive-right-sidebar.html">Lifestyle</a></li>
+                        <li><a href="archive-right-sidebar.html">Technology</a></li>
+                        <li><a href="archive-right-sidebar.html">Design</a></li>
+                        <li><a href="archive-right-sidebar.html">Business</a></li>
+                        <li><a href="archive-right-sidebar.html">Fashion</a></li>
+                    </ul>
+                </div>
+                <div class="circular-icons social-links">
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-copyright">
+                    <p>&copy;2019 Kavya. All rights reserved. Theme designed by <a href="#">CodeVibrant</a> </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer section end -->
+</main>
+
+
+<!-- Scroll to top -->
+<div id="stop" class="scroll-to-top">
+    <span><a href="#"><i class="fas fa-arrow-up"></i></a></span>
+</div>
+<!-- Scroll to top end -->
+
+
+
+
+{% endblock %}
