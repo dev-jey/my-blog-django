@@ -3,220 +3,6 @@
 
 {% block body_block %}
 
-<!-- Preloader  -->
-<div class="preloader-wrapper">
-    <div class="preloader">
-        <div class="preloader-circle" id="status">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-</div>
-<!-- Preloader end -->
-
-<main class="kavya-home-2">
-    <!-- Header -->
-    <header>
-        <!-- Navbar -->
-        <nav>
-            <div class=" kavya-navbar-2 kavya-navbar" id="sticky-top">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col order-2 col-lg-2 ">
-                            <div class="brand-name">
-                                <a href="{% url 'app:index' %}">
-                                    <h1>Devjey</h1>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col col-lg-8 order-1 order-lg-2">
-                            <span class="navbar-toggle" id="navbar-toggle">
-                                <i class="fas fa-bars"></i>
-                            </span>
-                            <ul class="nav-menu ml-auto mr-auto" id="nav-menu-toggle">
-                                <li class="nav-item"><a class="nav-link">Categories <span class="arrow-icon">
-                                            <span class="left-bar"></span>
-                                            <span class="right-bar"></span></span>
-                                    </a>
-                                    <ul class="drop-menu">
-                                        {% for category in categories %}
-                                        <li class="drop-menu-item"><a href="archive-right-sidebar.html">{{category}}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col col-lg-2 order-3">
-                            <div class="search-wrapper">
-                                <div class="search-icon">
-                                    <button class="open-search-btn"><i class="fa fa-search"></i></button>
-                                </div>
-                                <div class="sidebar-icon">
-                                    <button class="sidebar-btn"> <i class="fas fa-ellipsis-v"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar end -->
-
-        <!-- Search overlay -->
-        <div id="search-overlay" class="search-section">
-            <span class="closebtn"><i class="fas fa-times"></i></span>
-            <div class="overlay-content">
-                <form>
-                    <input type="text" placeholder="Search here" name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-        </div>
-        <!-- Search overlay end -->
-
-        <!-- Sticky sidebar -->
-        <div class="sticky-sidebar">
-            <div class="sticky-sidebar-content">
-                <div class="close-sidebar ml-auto">
-                    <i class="fas fa-times"></i>
-                </div>
-                <h3>About the Author</h3>
-
-                <div class="author-img">
-                    <img src="{{user.image}}" alt="">
-                </div>
-                <div class="author-desc">
-                    <h5 class="mb-2">{{user.username}}</h5>
-                    <p>{{user.bio}}</p>
-                </div>
-                <div class="circular-icons social-links">
-                    <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-
-                <div class="author-posts">
-                    <h3>Most viewed</h3>
-                    <div class="card mb-4">
-                        <div class="row no-gutters">
-                            <div class="col-4 col-md-4">
-                                <a href="single-no-sidebar.html">
-                                    <img src="{{user.image}}" class="card-img" alt="">
-                                </a>
-                            </div>
-                            <div class="col-8 col-md-8">
-                                <div class="card-body">
-                                    <ul class="category-tag-list">
-
-                                        <li class="category-tag-name">
-                                            <a href="#">Lifestyle</a>
-                                        </li>
-                                    </ul>
-                                    <h5 class="card-title title-font"><a href="single-no-sidebar.html">Making time for
-                                            travel</a>
-                                    </h5>
-                                    <div class="author-date">
-
-                                        <a class="date" href="#">
-                                            <span>21 Dec, 2019</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="row no-gutters">
-                            <div class="col-4 col-md-4">
-                                <a href="single-no-sidebar.html">
-                                    <img src="{{user.image}}" class="card-img" alt="">
-                                </a>
-                            </div>
-                            <div class="col-8 col-md-8">
-                                <div class="card-body">
-                                    <ul class="category-tag-list">
-                                        <li class="category-tag-name">
-                                            <a href="#">Lifestyle</a>
-                                        </li>
-                                    </ul>
-                                    <h5 class="card-title title-font"><a href="single-no-sidebar.html">It's okay to be
-                                            alone
-                                            sometimes</a>
-                                    </h5>
-                                    <div class="author-date">
-                                        <a class="date" href="#">
-                                            <span>21 Dec, 2019</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="row no-gutters">
-                            <div class="col-4 col-md-4">
-                                <a href="single-no-sidebar.html">
-                                    <img src="{{user.image}}" class="card-img" alt="">
-                                </a>
-                            </div>
-                            <div class="col-8 col-md-8">
-                                <div class="card-body">
-                                    <ul class="category-tag-list">
-                                        <li class="category-tag-name">
-                                            <a href="#">travel</a>
-                                        </li>
-                                    </ul>
-                                    <h5 class="card-title title-font"><a href="single-no-sidebar.html">Conserve
-                                            Forest</a>
-                                    </h5>
-                                    <div class="author-date">
-                                        <a class="date" href="#">
-                                            <span>21 Dec, 2019</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="row no-gutters">
-                            <div class="col-4 col-md-4">
-                                <a href="single-no-sidebar.html">
-                                    <img src="{{user.image}}" class="card-img" alt="">
-                                </a>
-                            </div>
-                            <div class="col-8 col-md-8">
-                                <div class="card-body">
-                                    <ul class="category-tag-list">
-                                        <li class="category-tag-name">
-                                            <a href="#">Lifestyle</a>
-                                        </li>
-                                    </ul>
-                                    <h5 class="card-title title-font"><a href="single-no-sidebar.html">Beach is my
-                                            favourite place</a>
-                                    </h5>
-                                    <div class="author-date">
-                                        <a class="date" href="#">
-                                            <span>21 Dec, 2019</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Sticky sidebar end -->
-
-        <div class="body-overlay"></div>
-    </header>
-    <!-- Header end -->
-
     <!-- Banner section -->
     <section class="banner-section">
         <div class="container">
@@ -224,8 +10,7 @@
                 {% for article in cover_articles %}
                 <div class="banner-item">
                     <div class="card">
-                        <a href=""><img src="{{article.image}}" class="card-img"
-                                alt="" /></a>
+                        <a href=""><img src="{{article.image}}" class="card-img" alt="" /></a>
                         <div class="card-img-overlay banner-text">
                             <ul class="category-tag-list">
                                 <li class="category-tag-name">
@@ -363,7 +148,7 @@
                             <div class="sidebar-content">
                                 <ul class="sidebar-list tags-list">
                                     {% for category in categories %}
-                                    <li><a href="#">{{category}}</a></li>
+                                    <li><a href="{% url 'app:category' category.id %}">{{category}}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -419,7 +204,8 @@
                     {% for article in other_articles %}
                     <div class="col-md-6 col-lg-3">
                         <div class="card small-card simple-overlay-card">
-                            <a href="single-no-sidebar.html"><img src="{{article.image}}" class="card-img" alt=""  style="object-fit: cover;height: 290px"/></a>
+                            <a href="single-no-sidebar.html"><img src="{{article.image}}" class="card-img" alt=""
+                                    style="object-fit: cover;height: 290px" /></a>
                             <div class="card-img-overlay">
                                 <ul class="category-tag-list mb-0">
                                     <li class="category-tag-name">
@@ -438,54 +224,5 @@
         </div>
     </section>
     <!-- Kavya Posts end -->
-
-    <!-- Footer section -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="footer-content-2">
-                <div class="footer-logo">
-                    <a href="index.html">
-                        <h5 class="brand-name">Devjey</h5>
-                    </a>
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        {% for category in categories %}
-                        <li><a href="archive-right-sidebar.html">{{category}}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="circular-icons social-links">
-                    <ul>
-                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-copyright">
-                    <p>&copy;<span id="year"></span> All rights reserved. <a href="#">Devjey</a> </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer section end -->
-</main>
-
-
-<!-- Scroll to top -->
-<div id="stop" class="scroll-to-top">
-    <span><a href="#"><i class="fas fa-arrow-up"></i></a></span>
-</div>
-<!-- Scroll to top end -->
-
-
-
 
 {% endblock %}
