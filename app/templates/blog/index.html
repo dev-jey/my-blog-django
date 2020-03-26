@@ -3,8 +3,6 @@
 
 {% block body_block %}
 
-
-
 <!-- Preloader  -->
 <div class="preloader-wrapper">
     <div class="preloader">
@@ -226,7 +224,7 @@
                 {% for article in cover_articles %}
                 <div class="banner-item">
                     <div class="card">
-                        <a href=""><img src="{{article.image}}" class="card-img" style="object-fit: cover; width: 100%"
+                        <a href=""><img src="{{article.image}}" class="card-img"
                                 alt="" /></a>
                         <div class="card-img-overlay banner-text">
                             <ul class="category-tag-list">
@@ -309,7 +307,7 @@
                                     </h5>
                                     <div class="author-date">
                                         <a class="author" href="#">
-                                            <img src="assets/images/writer.jpg" alt="" class="rounded-circle" />
+                                            <img src="{{article.author.image}}" alt="" class="rounded-circle" />
                                             <span class="writer-name-small">{{article.author.username}}</span>
                                         </a>
                                         <a class="date" href="#">
@@ -421,7 +419,7 @@
                     {% for article in other_articles %}
                     <div class="col-md-6 col-lg-3">
                         <div class="card small-card simple-overlay-card">
-                            <a href="single-no-sidebar.html"><img src="{{article.image}}" class="card-img" alt="" /></a>
+                            <a href="single-no-sidebar.html"><img src="{{article.image}}" class="card-img" alt=""  style="object-fit: cover;height: 290px"/></a>
                             <div class="card-img-overlay">
                                 <ul class="category-tag-list mb-0">
                                     <li class="category-tag-name">
@@ -447,18 +445,14 @@
             <div class="footer-content-2">
                 <div class="footer-logo">
                     <a href="index.html">
-                        <h5 class="brand-name">Kavya</h5>
+                        <h5 class="brand-name">Devjey</h5>
                     </a>
                 </div>
                 <div class="footer-links">
                     <ul>
-                        <li><a href="archive-right-sidebar.html">Food</a></li>
-                        <li><a href="archive-right-sidebar.html">Travel</a></li>
-                        <li><a href="archive-right-sidebar.html">Lifestyle</a></li>
-                        <li><a href="archive-right-sidebar.html">Technology</a></li>
-                        <li><a href="archive-right-sidebar.html">Design</a></li>
-                        <li><a href="archive-right-sidebar.html">Business</a></li>
-                        <li><a href="archive-right-sidebar.html">Fashion</a></li>
+                        {% for category in categories %}
+                        <li><a href="archive-right-sidebar.html">{{category}}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="circular-icons social-links">
@@ -476,7 +470,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-copyright">
-                    <p>&copy;2019 Kavya. All rights reserved. Theme designed by <a href="#">CodeVibrant</a> </p>
+                    <p>&copy;<span id="year"></span> All rights reserved. <a href="#">Devjey</a> </p>
                 </div>
             </div>
         </div>

@@ -1110,135 +1110,7 @@ a:hover {
 }
 /* Footer section end */
 
-/* ================================================================================== 
-										4. Home Page 3
-===================================================================================== */
-/* 4.1 Navbar */
-.kavya-home-3 .top-header {
-  padding: 0;
-  background: #f8f9fa;
-}
-.kavya-home-3 .bottom-header {
-  text-align: center;
-  padding-top: 10px;
-}
-.kavya-home-3 .kavya-navbar {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-/* Navbar end */
 
-/* 4.2 Banner section */
-.kavya-home-3 .banner-section {
-  margin-top: 0;
-}
-.kavya-home-3 .banner-section .banner-carousel .banner-item .banner-text {
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  top: auto;
-  background: #fff;
-  padding: 30px;
-  width: 80%;
-  text-align: center;
-}
-.kavya-home-3 .banner-section .banner-item .card {
-  height: 600px;
-  border: none;
-}
-.kavya-home-3 .banner-section .banner-item .card .card-img {
-  height: 600px;
-  width: 100%;
-  object-fit: cover;
-}
-.kavya-home-3 .banner-section .banner-item .card .card-img:hover {
-  opacity: 1;
-}
-.kavya-home-3 .banner-section .banner-item .title-font {
-  font-size: 30px;
-}
-.kavya-home-3 .banner-section .banner-item .card-text {
-  font-size: 15px;
-}
-.kavya-home-3 .banner-section .more-content-grid .card-img {
-  height: 250px;
-  object-fit: cover;
-}
-.kavya-home-3 .banner-section .more-content-grid .card .card-img-overlay {
-  padding-bottom: 20px;
-}
-.kavya-home-3 .banner-section .more-content-grid .title-font {
-  margin-bottom: 0;
-}
-.kavya-home-3 .more-content-grid .card-img-overlay .title-font a {
-  color: #bbbbbb;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
-}
-.kavya-home-3 .more-content-grid .card-img-overlay .title-font a:hover {
-  color: #fff;
-}
-/* Banner section end */
-
-/* 4.3 Featured posts */
-.kavya-home-3 .featured-posts .card-350 {
-  margin-top: 40px;
-}
-.kavya-home-3 .featured-posts .card-350 .card-img-top {
-  width: 100%;
-  object-fit: cover;
-}
-.kavya-home-3 .featured-posts .card-500 .card-img-overlay {
-  top: auto;
-  background-color: #fff;
-  margin: 30px;
-  text-align: center;
-}
-.kavya-home-3 .featured-posts .card-500 .card-img {
-  width: 100%;
-  object-fit: cover;
-}
-.kavya-home-3 .featured-posts .card-500 .title-font {
-  font-size: 25px;
-}
-/* Featured posts end */
-
-/* 4.4 Kavya Posts*/
-.kavya-home-3 .kavya-posts .card .card-img-top {
-  height: 200px;
-}
-
-.kavya-home-3 .kavya-posts .card-350 .card-img-top {
-  height: 350px;
-}
-.kavya-home-3 .kavya-posts .sidebar-posts {
-  margin-top: -40px;
-}
-/* Kavya posts */
-
-/* 4.5 Instagram posts */
-.kavya-home-3 .instagram-posts {
-  margin-top: 20px;
-}
-.kavya-home-3 .instagram-posts .sidebar-content .insta-item {
-  height: 110px;
-  padding: 5px;
-}
-.kavya-home-3 .instagram-posts .sidebar-content .insta-item .image-hover {
-  margin: 5px;
-}
-/* Instagram posts end */
-
-/* 4.6 Popular posts */
-.kavya-home-3 .popular-posts .recent-posts {
-  margin-top: -40px;
-}
-.kavya-home-3 .recent-posts .sidebar-item {
-  margin-bottom: 10px;
-}
 .recent-posts .sidebar-item .num-left {
   background: rgba(48, 60, 108, 0.27);
   color: #fff;
@@ -1280,9 +1152,6 @@ a:hover {
   font-weight: 600;
   color: #a7a7a7;
   padding-bottom: 20px;
-}
-.kavya-home-3 .footer-section .social-links {
-  padding-top: 30px;
 }
 .footer-section .popular-tags .sidebar-content {
   border-color: #333;
@@ -1666,7 +1535,7 @@ a:hover {
   height:50px;
   padding: 19px;
   z-index: 11;
-  background: #fff;
+  background: #f4976c;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -1675,7 +1544,6 @@ a:hover {
 }
 .banner-carousel .slick-prev {
   z-index: 11;
-  background: #fff;
   left: 27%;
   top:625px;
 }
@@ -1724,7 +1592,7 @@ a:hover {
   left: 84%;
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.7);
+  background: #f4976c;
   border-radius: 50%;
   padding: 18px;
 }
@@ -1733,27 +1601,12 @@ a:hover {
   left: 90%;
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   padding: 18px;
 }
 .kavya-home-2 .banner-carousel .slick-prev:hover,
 .kavya-home-2 .banner-carousel .slick-next:hover {
-  background: #fff;
-}
-.kavya-home-3 .banner-carousel .slick-dots {
-  top: auto;
-  bottom: -10px;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
-}
-.kavya-home-3 .slick-dots li {
-  display: inline-block;
-  margin-bottom: 0;
-  height: 20px;
-  width: 20px;
-  margin-bottom: 30px;
+  background: rgba(244, 151, 108, .6);;
 }
 .kavya-home-2 .banner-carousel .slick-dots li button:before, .kavya-home-3 .banner-carousel .slick-dots li button:before {
   color: #fff;
@@ -1763,30 +1616,7 @@ a:hover {
   color: #f4976c;
   opacity: 1;
 }
-.kavya-home-3 .banner-carousel .slick-dots li button:before {
-  left:0;
-}
-.kavya-home-3 .banner-carousel .slick-prev,
-.kavya-home-3 .banner-carousel .slick-next {
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 70px;
-  padding: 25px 15px;
-}
-.kavya-home-3 .banner-carousel .slick-prev {
-  left: 0;
-  background: rgba(255, 255, 255, 0.5);
-}
-.kavya-home-3 .banner-carousel .slick-next {
-  left: auto;
-  right: 0;
-  background: rgba(255, 255, 255, 0.5);
-}
-.kavya-home-3 .banner-carousel .slick-prev:hover,
-.kavya-home-3 .banner-carousel .slick-next:hover {
-  background: #fff;
-}
+
 .kavya-home-2 .banner-carousel .slick-dots li.slick-active button:before,.kavya-home-3 .banner-carousel .slick-dots li.slick-active button:before {
   color: #f4976c;
   opacity: 1;

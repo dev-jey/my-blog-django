@@ -10,7 +10,7 @@
     9. Instagram slider
     10. Sticky sidebar
 ================================================================= */
-
+document.getElementById("year").innerHTML = new Date().getFullYear();
 
 // 1. Preloader
 $(window).on('load', function () {
@@ -108,8 +108,6 @@ $('.banner-carousel').slick({
   autoplay:true,
   autoplaySpeed:2000,
   arrows:true,
-  prevArrow:"<img class='prev-icon slick-prev' src='assets/images/prev.png'>",
-  nextArrow:"<img class='next-icon slick-next' src='assets/images/next.png'>",
   fade:true, 
   swipeToSlide:true,
   swipe:true
