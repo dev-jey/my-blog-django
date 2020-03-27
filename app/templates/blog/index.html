@@ -10,7 +10,7 @@
                 {% for article in cover_articles %}
                 <div class="banner-item">
                     <div class="card">
-                        <a href=""><img src="{{article.cloudinary_image}}" class="card-img" alt="" /></a>
+                        <a href="{% url 'app:article' article.slug %}"><img src="{{article.cloudinary_image}}" class="card-img" alt="" /></a>
                         <div class="card-img-overlay banner-text">
                             <ul class="category-tag-list">
                                 <li class="category-tag-name">
@@ -124,7 +124,7 @@
                                         <div class="card-body">
                                             <ul class="category-tag-list mb-0">
                                                 <li class="category-tag-name">
-                                                    <a href="{% url 'app:article' article.category.id %}">{{article.category}}</a>
+                                                    <a href="{% url 'app:category' article.category.id %}">{{article.category}}</a>
                                                 </li>
                                             </ul>
                                             <h5 class="card-title title-font"><a

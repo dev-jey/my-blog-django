@@ -1,29 +1,18 @@
 {% extends 'blog/base.html' %}
-{% block title %}{{category.name}}{% endblock %}
+{% block title %} Search {{search}}{% endblock %}
 
 {% block body_block %}
 <!-- Page header-->
 <br><br>
-<section class="page-header" style="
-background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url({{category.cloudinary_image}}) no-repeat;
-background-size: 100%;
-">
+<section class="page-header">
     <div class="container">
         <div class="row align-items-center">
             <div class=" col-md-6">
                 <div class="page-title">
-                    <h2>{{category.name}}</h2>
+                    <h2>Search {{search}}</h2>
                 </div>
             </div>
             <div class=" col-md-6">
-                <div class="page-breadcrumb">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{% url 'app:index' %}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{category.name}}</li>
-                        </ol>
-                    </nav>
-                </div>
             </div>
         </div>
     </div>
@@ -33,6 +22,10 @@ background-size: 100%;
 <br><br>
 <section class="archive-content">
     <div class="container">
+        {% if no_articles %}
+        <h1>{{no_articles}}</h1>
+        {% endif %}
+        {% if category_articles %}
         <div class="row">
             {% for article in category_articles %}
             <div class="col-md-6">
@@ -59,6 +52,7 @@ background-size: 100%;
             </div>
             {% endfor %}
         </div>
+        {% endif %}
     </div>
 </section>
 <!-- Archive content end -->
@@ -69,7 +63,7 @@ background-size: 100%;
         <ul class="pagination justify-content-center">
             {% if category_articles.has_previous %}
             <li class="page-item">
-                <a class="page-link" href="?page={{category_articles.previous_page_number }}" tabindex="-1"><i
+                <a class="page-link" href="?page={{category_articles.previous_page_number }}&search={{search}}" tabindex="-1"><i
                         class="fas fa-arrow-left"></i></a>
             </li>
             {% else %}
@@ -81,12 +75,12 @@ background-size: 100%;
                 {% if category_articles.number == i %}
                     <li class="page-item active"><a class="page-link">{{i}}</a></li>
                 {% else %}
-                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{i}}</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ i }}&search={{search}}">{{i}}</a></li>
                 {% endif %}
             {% endfor %}
             {% if category_articles.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ category_articles.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+                <a class="page-link" href="?page={{ category_articles.next_page_number }}&search={{search}}"><i class="fas fa-arrow-right"></i></a>
             </li>
             {% else %}
             <li class="page-item disabled">

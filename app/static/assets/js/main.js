@@ -107,7 +107,7 @@ $('.banner-carousel').slick({
   dots:true,
   autoplay:true,
   autoplaySpeed:2000,
-  arrows:true,
+  // arrows:true,
   fade:true, 
   swipeToSlide:true,
   swipe:true
