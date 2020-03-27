@@ -5,7 +5,7 @@
 <!-- Page header-->
 <br><br>
 <section class="page-header" style="
-background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url({{category.image}}) no-repeat;
+background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url({{category.cloudinary_image}}) no-repeat;
 background-size: 100%;
 ">
     <div class="container">
@@ -37,23 +37,21 @@ background-size: 100%;
             {% for article in category_articles %}
             <div class="col-md-6">
                 <div class="card border-0">
-                    <a href="#">
-                        <img src="{{article.image}}" class="card-img-top" alt="" />
+                    <a href="{% url 'app:article' article.slug %}">
+                        <img src="{{article.cloudinary_image}}" class="card-img-top" alt="" />
                     </a>
                     <div class="card-body px-0">
                         <h5 class="card-title title-font">
-                            <a href="#">{{article.title}}</a>
+                            <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                         </h5>
                         <p class="card-text pb-4">{{article.body}}</p>
                         <div class="author-date">
                             <a class="author" href="#">
-                                <img src="{{article.author.image}}" alt="" class="rounded-circle" />
+                                <img src="{{article.author.cloudinary_image}}" alt="" class="rounded-circle" />
                                 <span class="writer-name-small">{{article.author}}
                                 </span>
                             </a>
-                            <a class="date" href="#">
                                 <span>{{article.created_at}}</span>
-                            </a>
                         </div>
 
                     </div>

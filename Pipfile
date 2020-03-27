@@ -10,6 +10,10 @@ autopep8 = "*"
 [packages]
 django = "*"
 psycopg2-binary = "*"
+pillow = "*"
+cloudinary = "*"
+django-heroku = "*"
+psycopg2 = "==2.7.5"
 
 [requires]
 python_version = "3.7"

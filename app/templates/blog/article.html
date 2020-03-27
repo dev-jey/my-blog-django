@@ -1,0 +1,149 @@
+{% extends 'blog/base.html' %}
+{% block title %}CSS Tutorials{% endblock %}
+
+{% block body_block %}
+
+<br><br>
+<section class="single-layout">
+    <div class="container">
+        <div class="blog-title-wrap" style="justify-content: flex-start;">
+            <h1 class="title-font text-left">{{article.title}}</h1>
+            <div class="author-date">
+                <div class="author">
+                    <img src="{{author.cloudinary_image}}" alt="" class="rounded-circle" />
+                    <span class="">{{article.author}}</span>
+                </div>
+                <a class="date" href="#">
+                    <span>Posted on {{article.created_at}}</span>
+                </a>
+            </div>
+            <ul class="category-tag-list mb-0">
+                <li class="category-tag-name">
+                    <a href="{% url 'app:category' article.category.id %}">{{article.category}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-lg-8 content">
+                <div class="blog-content-wrap theiaStickySidebar">
+
+                    <div class="blog-img-main">
+                        <img src="{{article.cloudinary_image}}" alt="">
+                    </div>
+                    <div class="blog-desc">
+                        <p>{{article.body}}
+                        </p>
+                    </div>
+                    <div class="tags-wrap">
+                        <div class="blog-tags">
+                            <p>Categories:</p>
+                            <ul class="sidebar-list tags-list">
+                                {% for category in categories %}
+                                <li><a href="{% url 'app:category' category.id %}">{{category}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-4 sidebar mt-2">
+                <br>
+                <div id="sticky-single" class="theiaStickySidebar">
+                    <div class="author-section">
+                        <div class="card author-card">
+                            <br>
+                            <h3 class="title-font">About the author</h3>
+                            <br>
+                            <div class="card-img">
+                                <br>
+                                <a href="{% url 'app:about' %}"><img src="{{article.author.cloudinary_image}}" alt=""></a>
+                            </div>
+                            <br>
+                            <a href="{% url 'app:about' %}">
+                                <h5 class="text-muted">{{article.author}}</h5>
+                                <small>Chief Author</small>
+                                <p class="card-text">
+                                    {{article.author.bio}}
+                                </p>
+                            </a>
+                            <div class="social-links circular-icons">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-posts">
+                        <div class="sidebar-title">
+                            <h5><i class="fas fa-circle"></i>Popular Posts</h5>
+                        </div>
+                        <div class="sidebar-content">
+                            {% for article in featured_articles %}
+                            <div class="card border-0">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-3 col-md-3">
+                                        <a href="{% url 'app:article' article.slug %}">
+                                            <img src="{{article.cloudinary_image}}" class="card-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-9 col-md-9">
+                                        <div class="card-body">
+                                            <ul class="category-tag-list mb-0">
+
+                                                <li class="category-tag-name">
+                                                    <a
+                                                        href="{% url 'app:category' article.category.id %}">{{article.category}}</a>
+                                                </li>
+                                            </ul>
+                                            <h5 class="card-title title-font"><a
+                                                    href="{% url 'app:article' article.slug %}">{{article.title}}</a>
+                                            </h5>
+                                            <div class="author-date">
+                                                <span>{{article.created_at}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="related-posts">
+    <div class="container">
+        <div class="related-title">
+            <h3>Related posts</h3>
+        </div>
+        <div class="row">
+            {% for article in featured_articles %}
+            <div class="col-md-6 col-lg-3">
+                <div class="card small-card simple-overlay-card">
+                    <a href="#"><img src="{{article.cloudinary_image}}" class="card-img" alt="" /></a>
+                    <div class="card-img-overlay">
+                        <ul class="category-tag-list mb-0">
+                            <li class="category-tag-name">
+                                <a href="{% url 'app:category' article.category.id %}">{{article.category}}</a>
+                            </li>
+                        </ul>
+                        <h5 class="card-title title-font">
+                            <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

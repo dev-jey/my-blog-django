@@ -115,13 +115,13 @@
             <!-- Sticky sidebar -->
             <div class="sticky-sidebar">
                 <div class="sticky-sidebar-content">
-                    <div class="close-sidebar ml-auto" style="position: sticky; top:0; background: #f4976c; border-radius: 50%">
+                    <div class="close-sidebar ml-auto" style="position: sticky; top:0; background: rgba(244, 151, 108, .9); border-radius: 50%">
                         <i class="fas fa-times" style="color: #fff"></i>
                     </div>
                     <h3>About the Author</h3>
 
                     <div class="author-img">
-                        <img src="{{user.image}}" alt="">
+                        <img src="{{user.cloudinary_image}}" alt="">
                     </div>
                     <div class="author-desc">
                         <h5 class="mb-2">{{user.username}}</h5>
@@ -142,8 +142,8 @@
                         <div class="card mb-4">
                             <div class="row no-gutters">
                                 <div class="col-4 col-md-4">
-                                    <a href="single-no-sidebar.html">
-                                        <img src="{{article.image}}" class="card-img" alt="">
+                                    <a href="{% url 'app:article' article.slug %}">
+                                        <img src="{{article.cloudinary_image}}" class="card-img" alt="">
                                     </a>
                                 </div>
                                 <div class="col-8 col-md-8">
@@ -155,7 +155,7 @@
                                             </li>
                                         </ul>
                                         <h5 class="card-title title-font"><a
-                                                href="single-no-sidebar.html">{{article.title}}</a>
+                                                href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                                         </h5>
                                         <div class="author-date">
 
@@ -185,7 +185,7 @@
             <div class="container">
                 <div class="footer-content-2">
                     <div class="footer-logo">
-                        <a href="index.html">
+                        <a href="{% url 'app:index' %}">
                             <h5 class="brand-name">Devjey</h5>
                         </a>
                     </div>

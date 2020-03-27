@@ -10,7 +10,7 @@
                 {% for article in cover_articles %}
                 <div class="banner-item">
                     <div class="card">
-                        <a href=""><img src="{{article.image}}" class="card-img" alt="" /></a>
+                        <a href=""><img src="{{article.cloudinary_image}}" class="card-img" alt="" /></a>
                         <div class="card-img-overlay banner-text">
                             <ul class="category-tag-list">
                                 <li class="category-tag-name">
@@ -18,12 +18,12 @@
                                 </li>
                             </ul>
                             <h5 class="card-title title-font">
-                                <a href="single-no-sidebar.html">{{article.title}}</a>
+                                <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                             </h5>
                             <p class="card-text mb-3">
                                 {{article.body}}
                             </p>
-                            <a href="single-no-sidebar.html" class="btn btn-solid btn-read">Read More</a>
+                            <a href="{% url 'app:article' article.slug %}" class="btn btn-solid btn-read">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -44,15 +44,15 @@
                 {% for article in featured_articles %}
                 <div class="col-md-6">
                     <div class="card simple-overlay-card">
-                        <a href="single-no-sidebar.html"><img src="{{article.image}}" class="card-img" alt="" /></a>
+                        <a href="{% url 'app:article' article.slug %}"><img src="{{article.cloudinary_image}}" class="card-img" alt="" /></a>
                         <div class="card-img-overlay">
                             <ul class="category-tag-list">
                                 <li class="category-tag-name">
-                                    <a href="#">{{article.category}}</a>
+                                    <a href="{% url 'app:article' article.category.id %}">{{article.category}}</a>
                                 </li>
                             </ul>
                             <h5 class="card-title title-font">
-                                <a href="single-no-sidebar.html">{{article.title}}</a>
+                                <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                             </h5>
                         </div>
                     </div>
@@ -75,24 +75,24 @@
                         {% for article in popular_articles %}
                         <div class="col-md-6">
                             <div class="card">
-                                <a href="single-no-sidebar.html">
-                                    <img src="{{article.image}}" class="card-img-top" alt="" />
+                                <a href="{% url 'app:article' article.slug %}">
+                                    <img src="{{article.cloudinary_image}}" class="card-img-top" alt="" />
                                 </a>
 
                                 <div class="card-body px-0">
                                     <ul class="category-tag-list">
                                         <li class="category-tag-name">
-                                            <a href="#">{{article.category}}</a>
+                                            <a href="{% url 'app:article' article.category.id %}">{{article.category}}</a>
                                         </li>
                                     </ul>
                                     <h5 class="card-title title-font">
-                                        <a href="single-no-sidebar.html">
+                                        <a href="{% url 'app:article' article.slug %}">
                                             {{article.title}}
                                         </a>
                                     </h5>
                                     <div class="author-date">
                                         <a class="author" href="#">
-                                            <img src="{{article.author.image}}" alt="" class="rounded-circle" />
+                                            <img src="{{article.author.cloudinary_image}}" alt="" class="rounded-circle" />
                                             <span class="writer-name-small">{{article.author.username}}</span>
                                         </a>
                                         <a class="date" href="#">
@@ -116,19 +116,19 @@
                             <div class="card mb-3">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-4 col-md-4">
-                                        <a href="single-no-sidebar.html">
-                                            <img src="{{article.image}}" class="card-img" alt="">
+                                        <a href="{% url 'app:article' article.slug %}">
+                                            <img src="{{article.cloudinary_image}}" class="card-img" alt="">
                                         </a>
                                     </div>
                                     <div class="col-8 col-md-8">
                                         <div class="card-body">
                                             <ul class="category-tag-list mb-0">
                                                 <li class="category-tag-name">
-                                                    <a href="#">{{article.category}}</a>
+                                                    <a href="{% url 'app:article' article.category.id %}">{{article.category}}</a>
                                                 </li>
                                             </ul>
                                             <h5 class="card-title title-font"><a
-                                                    href="single-no-sidebar.html">{{article.title}}</a>
+                                                    href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                                             </h5>
                                             <div class="author-date">
                                                 <a class="date" href="#">
@@ -173,23 +173,23 @@
                         <div class="card mb-4 long-card">
                             <div class="row no-gutters align-items-center">
                                 <div class="col-lg-6">
-                                    <a href="single-no-sidebar.html">
-                                        <img src="{{latest_article.image}}" class="card-img" alt="">
+                                    <a href="{% url 'app:article' latest_article.slug %}">
+                                        <img src="{{latest_article.cloudinary_image}}" class="card-img" alt="">
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="card-body">
                                         <ul class="category-tag-list">
                                             <li class="category-tag-name">
-                                                <a href="#">Lifestyle</a>
+                                                <a href="{% url 'app:article' latest_article.category.id %}">Lifestyle</a>
                                             </li>
                                         </ul>
-                                        <h5 class="card-title title-font"><a href="single-no-sidebar.html">
+                                        <h5 class="card-title title-font"><a href="{% url 'app:article' latest_article.slug %}">
                                                 {{latest_article.title}}
                                             </a>
                                         </h5>
                                         <p class="card-text">{{latest_article.body}}</p>
-                                        <a href="single-no-sidebar.html" class="btn btn-solid btn-read my-3">Read
+                                        <a href="{% url 'app:article' latest_article.slug %}" class="btn btn-solid btn-read my-3">Read
                                             More</a>
                                     </div>
                                 </div>
@@ -204,16 +204,16 @@
                     {% for article in other_articles %}
                     <div class="col-md-6 col-lg-3">
                         <div class="card small-card simple-overlay-card">
-                            <a href="single-no-sidebar.html"><img src="{{article.image}}" class="card-img" alt=""
+                            <a href="{% url 'app:article' article.slug %}"><img src="{{article.cloudinary_image}}" class="card-img" alt=""
                                     style="object-fit: cover;height: 290px" /></a>
                             <div class="card-img-overlay">
                                 <ul class="category-tag-list mb-0">
                                     <li class="category-tag-name">
-                                        <a href="#">{{article.category}}</a>
+                                        <a href="{% url 'app:category' article.category.id %}">{{article.category}}</a>
                                     </li>
                                 </ul>
                                 <h5 class="card-title title-font">
-                                    <a href="single-no-sidebar.html">{{article.title}}</a>
+                                    <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                                 </h5>
                             </div>
                         </div>
