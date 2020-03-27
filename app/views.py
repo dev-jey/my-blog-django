@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Article, User, Category
 from django.template import RequestContext
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def get_all_categories():
@@ -39,16 +40,31 @@ def index(request):
             print(cat.image)
         return render(request, 'blog/index.html', context)
     except Exception as e:
-        raise http500("No articles yet")
+        raise Exception("No articles yet")
+
+
+def paginate(item_list, request):
+    page_number = request.GET.get('page')
+    paginator = Paginator(item_list, 10)
+    try:
+        items = paginator.get_page(page_number)
+    except PageNotAnInteger:
+        items = paginator.get_page(1)
+    except EmptyPage:
+        items = paginator.get_page(paginator.num_pages)
+    return items, paginator
 
 
 def get_category(request, id):
     category = Category.objects.get(id=id)
-    articles = Article.objects.filter(category=category)
+    article_list = Article.objects.filter(category=category)
+    if article_list:
+        articles, paginator = paginate(article_list, request)
     context = {
         'category': category,
         'categories': get_all_categories(),
         'category_articles': articles,
+        'paginator': paginator,
         'user': get_user(),
         'featured_articles': get_all_articles()[:4]
     }
@@ -65,6 +81,22 @@ def view_article(request, slug):
     }
     return render(request, 'blog/article.html', context)
 
+
+def search_article(request):
+    input_ = request.GET.get('search')
+    article_list = Article.objects.filter(title__icontains=input_)
+    articles, paginator = paginate(article_list, request)
+    context = {
+        'search': input_,
+        'category_articles': articles,
+        'categories': get_all_categories(),
+        'paginator': paginator,
+        'user': get_user(),
+        'featured_articles': get_all_articles()[:4]
+    }
+    if not articles:
+        context['no_articles'] = 'No articles found'
+    return render(request, 'blog/search.html', context)
 
 def view_about(request):
     context = {
@@ -86,6 +118,7 @@ def error404(request, exception):
     response = render(request, "blog/404.html", context)
     response.status_code = 404
     return response
+
 
 def error500(request):
     context = {
