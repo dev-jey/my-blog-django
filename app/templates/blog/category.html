@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-{% block title %}CSS Tutorials{% endblock %}
+{% block title %}{{category.name}}{% endblock %}
 
 {% block body_block %}
 <!-- Page header-->
@@ -38,13 +38,13 @@ background-size: 100%;
             <div class="col-md-6">
                 <div class="card border-0">
                     <a href="{% url 'app:article' article.slug %}">
-                        <img src="{{article.cloudinary_image}}" class="card-img-top" alt="" />
+                        <img src="{{article.cloudinary_image}}" class="card-img-top" alt="" style="height: 350px" />
                     </a>
                     <div class="card-body px-0">
                         <h5 class="card-title title-font">
                             <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                         </h5>
-                        <p class="card-text pb-4">{{article.body}}</p>
+                        <p class="card-text pb-4">{{article.body | truncatewords:50}}</p>
                         <div class="author-date">
                             <a class="author" href="#">
                                 <img src="{{article.author.cloudinary_image}}" alt="" class="rounded-circle" />

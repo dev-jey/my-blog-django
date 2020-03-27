@@ -39,7 +39,7 @@ def index(request):
             print(cat.image)
         return render(request, 'blog/index.html', context)
     except Exception as e:
-        raise ObjectDoesNotExist("No articles yet")
+        raise http500("No articles yet")
 
 
 def get_category(request, id):
@@ -74,3 +74,22 @@ def view_about(request):
     }
     return render(request, 'blog/about.html', context)
 
+
+##
+# Handle server Errors
+def error404(request, exception):
+    context = {
+        'categories': get_all_categories(),
+        'user': get_user(),
+        'featured_articles': get_all_articles()[:4]
+    }
+    response = render(request, "blog/404.html", context)
+    response.status_code = 404
+    return response
+
+def error500(request):
+    context = {
+    }
+    response = render(request, "blog/500.html", context)
+    response.status_code = 500
+    return response

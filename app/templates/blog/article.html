@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-{% block title %}CSS Tutorials{% endblock %}
+{% block title %}{{article.title}}{% endblock %}
 
 {% block body_block %}
 
@@ -10,7 +10,7 @@
             <h1 class="title-font text-left">{{article.title}}</h1>
             <div class="author-date">
                 <div class="author">
-                    <img src="{{author.cloudinary_image}}" alt="" class="rounded-circle" />
+                    <img src="{{article.author.cloudinary_image}}" alt="" class="rounded-circle" />
                     <span class="">{{article.author}}</span>
                 </div>
                 <a class="date" href="#">
@@ -56,7 +56,8 @@
                             <br>
                             <div class="card-img">
                                 <br>
-                                <a href="{% url 'app:about' %}"><img src="{{article.author.cloudinary_image}}" alt=""></a>
+                                <a href="{% url 'app:about' %}"><img src="{{article.author.cloudinary_image}}"
+                                        alt=""></a>
                             </div>
                             <br>
                             <a href="{% url 'app:about' %}">
@@ -68,10 +69,12 @@
                             </a>
                             <div class="social-links circular-icons">
                                 <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://github.com/dev-jey" target="_blank"><i
+                                                class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/devjey/" target="_blank"><i
+                                                class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://dev-jey.github.io" target="_blank"><i
+                                                class="fas fa-briefcase"></i></a></li>
                                 </ul>
                             </div>
                             <br>
