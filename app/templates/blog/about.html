@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+{% block title %}CSS Tutorials{% endblock %}
+
+{% block body_block %}
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-inner">
+            <div class="row no-gutters">
+                <div class="col-md-7">
+                    <div class="about-text">
+                        <h3 class="about-title">{{user.username}}</h3>
+                        <p>{{user.bio}}</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="about-img">
+                        <img src="{{user.cloudinary_image}}" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="about-inner-2">
+            <div class="row no-gutters align-items-center">
+                <div class="col-md-7">
+                    <div class="about-im">
+                        <img src="../../static/assets/images/code-svg.svg" alt="" style="object-fit: cover;width: 100%">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="about-text">
+                        <h3 class="about-title">Overview of my skills</h3>
+                        <ol style="margin-left: 2rem">
+                            <li>Angular</li>
+                            <li>Python
+                                <ul style="margin-left: 1rem">
+                                    <li>Django</li>
+                                    <li>DRF</li>
+                                    <li>Graphene</li>
+                                    <li>Flask</li>
+                                    <li>Beautiful soup, selenium, scrapy</li>
+                                    <li>Pandas, scikit learn, matplotlib</li>
+                                    <li>CI/CD</li>
+                                    <li>Postgres</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
