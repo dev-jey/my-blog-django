@@ -21,7 +21,7 @@
                                 <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                             </h5>
                             <p class="card-text mb-3">
-                                {{article.body | truncatewords:50}}
+                                {{article.body | truncatewords:50 | safe}}
                             </p>
                             <a href="{% url 'app:article' article.slug %}" class="btn btn-solid btn-read">Read More</a>
                         </div>
@@ -188,7 +188,7 @@
                                                 {{latest_article.title}}
                                             </a>
                                         </h5>
-                                        <p class="card-text">{{latest_article.body | truncatewords:200}}</p>
+                                        <p class="card-text">{{latest_article.body | truncatewords:200 | safe}}</p>
                                         <a href="{% url 'app:article' latest_article.slug %}" class="btn btn-solid btn-read my-3">Read
                                             More</a>
                                     </div>

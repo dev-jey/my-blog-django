@@ -2,6 +2,7 @@ import os
 from django.db import models
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
+from froala_editor.fields import FroalaField
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
@@ -43,7 +44,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(db_index=True, unique=True)
     is_active = models.BooleanField(default=True)
     bio = models.TextField(blank=True)
-    image =  CloudinaryField('image')
+    image = CloudinaryField('image')
     is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -53,7 +54,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
-    
+
     @property
     def cloudinary_image(self):
         return f"https://res.cloudinary.com/{os.environ.get('CLOUD_NAME', '')}/{self.image}"
@@ -76,7 +77,9 @@ class Category(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    body = models.TextField(null=True, max_length=10000)
+    body = FroalaField(theme='dark', options={
+        'toolbarInline': True,
+    })
     category = models.ForeignKey(Category, related_name='articles',
                                  on_delete=models.CASCADE,
                                  blank=True, null=True)
@@ -89,7 +92,6 @@ class Article(models.Model):
                                blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
 
     @property
     def cloudinary_image(self):

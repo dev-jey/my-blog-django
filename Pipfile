@@ -15,6 +15,7 @@ cloudinary = "*"
 django-heroku = "*"
 psycopg2 = "==2.7.5"
 gunicorn = "*"
+django-froala-editor = "*"
 
 [requires]
 python_version = "3.7"
