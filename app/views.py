@@ -39,8 +39,9 @@ def index(request):
         for cat in get_all_categories():
             print(cat.image)
         return render(request, 'blog/index.html', context)
-    except Exception as e:
-        raise Exception("No articles yet")
+    except ObjectDoesNotExist as e:
+        print(e)
+        raise ObjectDoesNotExist("No articles yet")
 
 
 def paginate(item_list, request):
