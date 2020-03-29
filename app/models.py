@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 from tinymce.models import HTMLField
+
+from django.db.models.signals import post_save
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
@@ -119,4 +121,17 @@ class Article(models.Model):
         """create an article and save to the database"""
         if not self.slug:
             self.slug = self.generate_slug()
-        super().save(*args, **kwargs)
+        super(Article, self).save(*args, **kwargs)
+    
+def update_slug(sender,instance, signal, **kwargs):
+    '''Signal to update an article's slug once title is updated''' 
+    if kwargs.get('updated', True):
+        article = Article.objects.filter(slug=instance.pk)
+        print(article)
+        new_slug = slugify(instance.title)
+        article.update(
+            slug=new_slug
+        )
+
+
+post_save.connect(update_slug, sender=Article)
