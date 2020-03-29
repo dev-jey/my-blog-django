@@ -2,7 +2,6 @@ import os
 from django.db import models
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
-from froala_editor.fields import FroalaField
 from tinymce.models import HTMLField
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
