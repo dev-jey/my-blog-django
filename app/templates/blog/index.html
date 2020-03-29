@@ -21,7 +21,7 @@
                                 <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                             </h5>
                             <p class="card-text mb-3">
-                                {{article.description | truncatewords:50 | safe}}
+                                {{article.description | truncatewords:30 | safe}}
                             </p>
                             <br>
                             <a href="{% url 'app:article' article.slug %}" class="btn btn-solid btn-read">Read More</a>
