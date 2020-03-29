@@ -44,7 +44,7 @@ background-size: 100%;
                         <h5 class="card-title title-font">
                             <a href="{% url 'app:article' article.slug %}">{{article.title}}</a>
                         </h5>
-                        <p class="card-text pb-4">{{article.body | truncatewords:50 | safe}}</p>
+                        <p class="card-text pb-4">{{article.description | truncatewords:50 | safe}}</p>
                         <div class="author-date">
                             <a class="author" href="#">
                                 <img src="{{article.author.cloudinary_image}}" alt="" class="rounded-circle" />
