@@ -79,7 +79,7 @@ class Category(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField(max_length=400, blank=False)
+    description = models.TextField(max_length=1000, blank=False)
     category = models.ForeignKey(Category, related_name='articles',
                                  on_delete=models.CASCADE,
                                  blank=True, null=True)
