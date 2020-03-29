@@ -43,13 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'cloudinary',
-    'froala_editor'
+    'tinymce',
 ]
-
-FROALA_EDITOR_PLUGINS = ('align', 'char_counter', 'code_beautifier' ,'code_view', 'colors', 'draggable', 'emoticons',
-        'entities', 'file', 'font_family', 'font_size', 'fullscreen', 'image_manager', 'image', 'inline_style',
-        'line_breaker', 'link', 'lists', 'paragraph_format', 'paragraph_style', 'quick_insert', 'quote', 'save', 'table',
-        'url', 'video')
 
 #Cloudinary
 #add config 
@@ -151,3 +146,21 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/') # 'media' is my media folder
 MEDIA_URL = '/media/'
+
+
+TINYMCE_JS_URL = os.path.join(STATIC_URL, "assets/js/tiny_mce/tinymce.min.js")
+TINYMCE_JS_ROOT = os.path.join(STATIC_URL, "assets/js/tiny_mce")
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    'height' : 300,
+    'plugins': "image,imagetools,media,codesample,link,code",
+    'cleanup_on_startup': True,
+    'menubar': False,
+    'toolbar': "styleselect |undo redo | bold italic | alignleft aligncenter alignright | link image media codesample code",
+    'image_caption': True,
+    'image_advtab': True,
+    'custom_undo_redo_levels': 10,
+    'file_browser_callback' : "myFileBrowser"
+    }
+

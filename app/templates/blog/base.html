@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Google ads -->
-    <script data-ad-client="ca-pub-9078814640726351" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script data-ad-client="ca-pub-9078814640726351" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="48x48" href="{% static 'assets/images/favicon.ico' %}">
@@ -84,9 +85,9 @@
                                             {% endfor %}
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'app:about' %}">About 
-                                    </a>
-                                </li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'app:about' %}">About
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col col-lg-2 order-3">
@@ -109,8 +110,8 @@
             <div id="search-overlay" class="search-section">
                 <span class="closebtn"><i class="fas fa-times"></i></span>
                 <div class="overlay-content">
-                    <form method="GET" action="{% url 'app:search' %}">  
-                            {% csrf_token %}
+                    <form method="GET" action="{% url 'app:search' %}">
+                        {% csrf_token %}
                         <input type="text" placeholder="Search articles" name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
@@ -121,7 +122,8 @@
             <!-- Sticky sidebar -->
             <div class="sticky-sidebar">
                 <div class="sticky-sidebar-content">
-                    <div class="close-sidebar ml-auto" style="position: sticky; top:0; background: rgba(244, 151, 108, .9); border-radius: 50%">
+                    <div class="close-sidebar ml-auto"
+                        style="position: sticky; top:0; background: rgba(244, 151, 108, .9); border-radius: 50%">
                         <i class="fas fa-times" style="color: #fff"></i>
                     </div>
                     <h3>About the Author</h3>
@@ -135,9 +137,12 @@
                     </div>
                     <div class="circular-icons social-links">
                         <ul>
-                                <li><a href="https://github.com/dev-jey" target="_blank"><i class="fab fa-github"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/devjey/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="https://dev-jey.github.io" target="_blank"><i class="fas fa-briefcase"></i></a></li>
+                            <li><a href="https://github.com/dev-jey" target="_blank"><i class="fab fa-github"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/devjey/" target="_blank"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://dev-jey.github.io" target="_blank"><i class="fas fa-briefcase"></i></a>
+                            </li>
                         </ul>
                     </div>
 
@@ -156,7 +161,8 @@
                                         <ul class="category-tag-list">
 
                                             <li class="category-tag-name">
-                                                <a href="{% url 'app:category' article.category.id %}">{{article.category}}</a>
+                                                <a
+                                                    href="{% url 'app:category' article.category.id %}">{{article.category}}</a>
                                             </li>
                                         </ul>
                                         <h5 class="card-title title-font"><a
@@ -203,9 +209,12 @@
                     </div>
                     <div class="circular-icons social-links">
                         <ul>
-                            <li><a href="https://github.com/dev-jey" target="_blank"><i class="fab fa-github"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/devjey/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="https://dev-jey.github.io" target="_blank"><i class="fas fa-briefcase"></i></a></li>
+                            <li><a href="https://github.com/dev-jey" target="_blank"><i class="fab fa-github"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/devjey/" target="_blank"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://dev-jey.github.io" target="_blank"><i class="fas fa-briefcase"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -226,7 +235,7 @@
     </div>
     <!-- Scroll to top end -->
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.2.1/tinymce.min.js"></script>
     <script src="{% static 'assets/js/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/slick.min.js' %}"></script>

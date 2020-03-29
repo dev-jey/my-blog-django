@@ -23,6 +23,7 @@
                             <p class="card-text mb-3">
                                 {{article.body | truncatewords:50 | safe}}
                             </p>
+                            <br>
                             <a href="{% url 'app:article' article.slug %}" class="btn btn-solid btn-read">Read More</a>
                         </div>
                     </div>

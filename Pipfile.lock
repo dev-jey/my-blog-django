@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7d29c72f1d57d486ffd30783cf45e834c37c117a58d3a215148c41b5b5dcc3d9"
+            "sha256": "89f72129dc47f6c8d11a5cd6258ed8479b8f8d590d92b9f8afd0cc008232998c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -52,13 +52,6 @@
             "index": "pypi",
             "version": "==3.0.4"
         },
-        "django-froala-editor": {
-            "hashes": [
-                "sha256:1d5f4dc9f5773cd9791669166124e02b127851202663b212da6f66956237e9c8"
-            ],
-            "index": "pypi",
-            "version": "==3.1.0"
-        },
         "django-heroku": {
             "hashes": [
                 "sha256:2bc690aab89eedbe01311752320a9a12e7548e3b0ed102681acc5736a41a4762",
@@ -66,6 +59,14 @@
             ],
             "index": "pypi",
             "version": "==0.3.1"
+        },
+        "django-tinymce": {
+            "hashes": [
+                "sha256:5a6e21406daafab22124be5c447abdfe78937307420daae0b997d2be0f08c58b",
+                "sha256:bb7311a2ce705a0b95f4ae8fab4f17445982719b557f4e935d68dae514f7df0a"
+            ],
+            "index": "pypi",
+            "version": "==2.8.0"
         },
         "gunicorn": {
             "hashes": [
