@@ -79,7 +79,7 @@ class Category(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    body = HTMLField()
+    description = models.CharField(max_length=400, blank=False)
     category = models.ForeignKey(Category, related_name='articles',
                                  on_delete=models.CASCADE,
                                  blank=True, null=True)
@@ -90,6 +90,7 @@ class Article(models.Model):
     author = models.ForeignKey(User, related_name='articles',
                                on_delete=models.CASCADE,
                                blank=True, null=True)
+    body = HTMLField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
