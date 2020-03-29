@@ -153,7 +153,7 @@ TINYMCE_JS_ROOT = os.path.join(STATIC_URL, "assets/js/tiny_mce")
 
 
 TINYMCE_DEFAULT_CONFIG = {
-    'height' : 300,
+    'height' : 500,
     'plugins': "image,imagetools,media,codesample,link,code",
     'cleanup_on_startup': True,
     'menubar': False,
