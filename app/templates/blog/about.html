@@ -10,7 +10,10 @@
                 <div class="col-md-7">
                     <div class="about-text">
                         <h3 class="about-title">{{user.username}}</h3>
-                        <p>{{user.bio}}</p>
+                        <p>{{user.bio}}</p><br>
+                <a href="https://github.com/dev-jey/" target="_blank" class="btn btn-solid btn-read">
+                    <i class="fab fa-github"></i> &nbsp;
+                    My Github</a>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -31,28 +34,61 @@
                 </div>
                 <div class="col-md-5">
                     <div class="about-text">
-
-                        <br><br>
-                        <h3 class="about-title">Overview of my skills</h3>
-                        <ol style="margin-left: 2rem">
-                            <li>Angular</li>
-                            <li>Python
-                                <ul style="margin-left: 1rem">
-                                    <li>Django</li>
-                                    <li>DRF</li>
-                                    <li>Graphene</li>
-                                    <li>Flask</li>
-                                    <li>Beautiful soup, selenium, scrapy</li>
-                                    <li>Pandas, scikit learn, matplotlib</li>
+                        <br>
+                        <div className="container-fluid row">
+                            <div className="col-6 p-1">
+                                <h3>Skills</h3>
+                                <hr className="normal-hr-2">
+                                </hr>
+                                <ul className="pl-4">
+                                    <li>Good communication skills</li>
+                                    <li>Effective team player and leader</li>
+                                    <li>Prompt action on feedback & attention to detail</li>
                                     <li>CI/CD</li>
-                                    <li>Postgres</li>
+                                    <li>Patterns (MVC), Rest APIs and GraphQL.</li>
+                                    <li>Testing & linting</li>
+                                    <li>UI/UX design with Figma</li>
                                 </ul>
-                            </li>
-                        </ol>
+                            </div>
+                            <div className="col-6 p-1">
+                                <hr className="normal-hr-2">
+                                </hr>
+                                Django (DRF, Graphene, Monolithic)
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-dark" role="progressbar" style="width: 99%"
+                                        aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div><br>
+                                Data scrapping (Bs4, selenium, scrapy)
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-dark" role="progressbar" style="width: 96%"
+                                        aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div><br>
+                                Data Science (pandas, scikit-learn, matplotlib)
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-dark" role="progressbar" style="width: 93%"
+                                        aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div><br>
+                                Flask (Restful, Restplus)
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-dark" role="progressbar" style="width: 95%"
+                                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div><br>
+                                Angular & React Redux/apollo
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-dark" role="progressbar" style="width: 94%"
+                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+</div>
 </section>
 {% endblock %}
