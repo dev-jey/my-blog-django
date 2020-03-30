@@ -5,3 +5,8 @@
 ###### Check it out here 
 
 ###### https://dev-jey.herokuapp.com
+
+## Key features included
+- Django Signals
+- Tinymce
+- Cloudinary
