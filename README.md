@@ -1,4 +1,4 @@
-# READ ME
+# My Blog
 
 ### This is a bloggin monolithic application created entirely in django.
 
