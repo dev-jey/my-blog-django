@@ -56,18 +56,15 @@
                             <br>
                             <div class="card-img">
                                 <br>
-                                <a href="{% url 'app:about' %}"><img src="{{article.author.cloudinary_image}}"
-                                        alt=""></a>
+                                <img src="{{article.author.cloudinary_image}}" alt="">
                             </div>
                             <br>
-                            <a href="{% url 'app:about' %}">
-                                <br><br>
-                                <h5 class="text-muted">{{article.author}}</h5>
-                                <small>Chief Author</small>
-                                <p class="card-text">
-                                    {{article.author.bio}}
-                                </p>
-                            </a>
+                            <br><br>
+                            <h5 class="text-muted">{{article.author}}</h5>
+                            <small>Chief Author</small>
+                            <p class="card-text">
+                                {{article.author.bio}}
+                            </p>
                             <div class="social-links circular-icons">
                                 <ul>
                                     <li><a href="https://github.com/dev-jey" target="_blank"><i
