@@ -15,18 +15,18 @@ def get_user():
     return User.objects.get(is_superuser=True)
 
 
-def get_all_articles():
-    return Article.objects.all()
+def get_all_articles(no_of_articles = 0):
+    return random.sample(list(Article.objects.all()), no_of_articles)
 
 
 def index(request):
     try:
-        cover_articles = random.sample(get_all_articles(),3)
-        featured_articles = random.sample(get_all_articles(), 4)
-        popular_articles = random.sample(get_all_articles(), 4)
-        recent_articles = random.sample(get_all_articles(), 4)
-        latest_article = random.sample(get_all_articles(), 1)
-        other_articles = random.sample(get_all_articles(), 4)
+        cover_articles = get_all_articles(3)
+        featured_articles = get_all_articles(4)
+        popular_articles = get_all_articles(4)[::-1]
+        recent_articles = get_all_articles(4)
+        latest_article = get_all_articles(2)[0]
+        other_articles = get_all_articles(4)
         context = {
             'cover_articles': cover_articles,
             'featured_articles': featured_articles,
@@ -68,7 +68,7 @@ def get_category(request, id):
         'category_articles': articles,
         'paginator': paginator,
         'user': get_user(),
-        'featured_articles': random.sample(get_all_articles(), 4)
+        'featured_articles': get_all_articles(4)
     }
     return render(request, 'blog/category.html', context)
 
@@ -79,7 +79,7 @@ def view_article(request, slug):
         'article': article,
         'categories': get_all_categories(),
         'user': get_user(),
-        'featured_articles': random.sample(get_all_articles(), 4)
+        'featured_articles': get_all_articles(4)
     }
     return render(request, 'blog/article.html', context)
 
@@ -94,19 +94,19 @@ def search_article(request):
         'categories': get_all_categories(),
         'paginator': paginator,
         'user': get_user(),
-        'featured_articles': random.sample(get_all_articles(), 4)
+        'featured_articles': get_all_articles(4)
     }
     if not articles:
         context['no_articles'] = 'No articles found'
     return render(request, 'blog/search.html', context)
 
-# def view_about(request):
-#     context = {
-#         'categories': get_all_categories(),
-#         'user': get_user(),
-#         'featured_articles': get_all_articles()[:4]
-#     }
-#     return render(request, 'blog/about.html', context)
+def view_about(request):
+    context = {
+        'categories': get_all_categories(),
+        'user': get_user(),
+        'featured_articles': get_all_articles(4)
+    }
+    return render(request, 'blog/about.html', context)
 
 
 ##
@@ -115,7 +115,7 @@ def error404(request, exception):
     context = {
         'categories': get_all_categories(),
         'user': get_user(),
-        'featured_articles': get_all_articles()[:4]
+        'featured_articles': get_all_articles(4)
     }
     response = render(request, "blog/404.html", context)
     response.status_code = 404
