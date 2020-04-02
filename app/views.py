@@ -99,13 +99,13 @@ def search_article(request):
         context['no_articles'] = 'No articles found'
     return render(request, 'blog/search.html', context)
 
-def view_about(request):
-    context = {
-        'categories': get_all_categories(),
-        'user': get_user(),
-        'featured_articles': get_all_articles()[:4]
-    }
-    return render(request, 'blog/about.html', context)
+# def view_about(request):
+#     context = {
+#         'categories': get_all_categories(),
+#         'user': get_user(),
+#         'featured_articles': get_all_articles()[:4]
+#     }
+#     return render(request, 'blog/about.html', context)
 
 
 ##
