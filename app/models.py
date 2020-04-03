@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 from tinymce.models import HTMLField
-
+from django.urls import reverse
 from django.db.models.signals import post_save
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
@@ -93,6 +93,9 @@ class Article(models.Model):
     body = HTMLField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse('app:article',kwargs={'slug':self.slug})
 
     @property
     def cloudinary_image(self):

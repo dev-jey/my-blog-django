@@ -1,5 +1,6 @@
 import os
 import random
+import readtime
 from django.shortcuts import render
 from .models import Article, User, Category
 from django.template import RequestContext
@@ -79,7 +80,9 @@ def view_article(request, slug):
         'article': article,
         'categories': get_all_categories(),
         'user': get_user(),
-        'featured_articles': get_all_articles(4)
+        'featured_articles': get_all_articles(4),
+        'readtime': readtime.of_html(article.body),
+        'current_backend_url': os.environ.get('CURRENT_BACKEND_URL', '')
     }
     return render(request, 'blog/article.html', context)
 
