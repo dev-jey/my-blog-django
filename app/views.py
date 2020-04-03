@@ -1,5 +1,6 @@
 import os
 import random
+import numpy as np
 import readtime
 from django.shortcuts import render
 from .models import Article, User, Category
@@ -17,7 +18,7 @@ def get_user():
 
 
 def get_all_articles(no_of_articles = 0):
-    return random.sample(list(Article.objects.all()), no_of_articles)
+    return  list(np.random.permutation(Article.objects.all())[:no_of_articles])
 
 
 def index(request):
