@@ -16,6 +16,7 @@ django-heroku = "*"
 psycopg2 = "==2.7.5"
 gunicorn = "*"
 django-tinymce = "*"
+readtime = "*"
 
 [requires]
 python_version = "3.7"

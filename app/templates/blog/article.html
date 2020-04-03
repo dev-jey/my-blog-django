@@ -6,7 +6,7 @@
 <br><br>
 <section class="single-layout">
     <div class="container">
-        <div class="blog-title-wrap" style="justify-content: flex-start;">
+        <div class="blog-title-wrap col-md-7 col-lg-8 " style="justify-content: flex-start;">
             <h1 class="title-font text-left">{{article.title}}</h1>
             <div class="author-date">
                 <div class="author">
@@ -17,11 +17,13 @@
                     <span>Posted on {{article.created_at}}</span>
                 </a>
             </div>
-            <ul class="category-tag-list mb-0">
+            <ul class="category-tag-list mb-0 mx-auto">
                 <li class="category-tag-name">
                     <a href="{% url 'app:category' article.category.id %}">{{article.category}}</a>
                 </li>
             </ul>
+
+                <b style="float: right; margin-left: auto">{{readtime}}</b>
         </div>
         <div class="row">
             <div class="col-md-7 col-lg-8 content">
@@ -44,6 +46,10 @@
                             </ul>
                         </div>
                     </div>
+                    <br>
+                    <h3>Comments</h3>
+                    <hr>
+                    {% include 'comments.html' with url=article.slug %}
                 </div>
             </div>
             <div class="col-md-5 col-lg-4 sidebar mt-2">
