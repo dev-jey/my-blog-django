@@ -1,0 +1,10 @@
+django
+psycopg2-binary
+pillow
+cloudinary
+django-heroku
+psycopg2
+gunicorn
+django-tinymce
+readtime
+numpy
