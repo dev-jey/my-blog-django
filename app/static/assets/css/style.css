@@ -285,6 +285,7 @@ a:hover {
   -o-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  text-align: left;
 }
 
 .brand-name a span {

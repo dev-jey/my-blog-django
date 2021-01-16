@@ -5,6 +5,7 @@ import readtime
 from django.shortcuts import render
 from .models import Article, User, Category
 from django.template import RequestContext
+from django.http import JsonResponse
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -18,7 +19,11 @@ def get_user():
 
 
 def get_all_articles(no_of_articles = 0):
-    return  list(np.random.permutation(Article.objects.all())[:no_of_articles])
+    try:
+        articles = list(np.random.permutation(Article.objects.all())[:no_of_articles])
+    except ObjectDoesNotExist as e:
+        articles = []
+    return articles
 
 
 def index(request):
@@ -42,9 +47,9 @@ def index(request):
         for cat in get_all_categories():
             print(cat.image)
         return render(request, 'blog/index.html', context)
-    except ObjectDoesNotExist as e:
+    except Exception as e:
         print(e)
-        raise ObjectDoesNotExist("No articles yet")
+        return JsonResponse({"error":"No articles yet"})
 
 
 def paginate(item_list, request):

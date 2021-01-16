@@ -8,6 +8,9 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
+import cloudinary
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
 
 
 class UserManager(BaseUserManager):
@@ -59,7 +62,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def cloudinary_image(self):
-        return f"https://res.cloudinary.com/{os.environ.get('CLOUD_NAME', '')}/{self.image}"
+        return f"https://res.cloudinary.com/dw675k0f5/image/upload/v1586256823/forongik3xq77zjpml66.png"
 
 
 class Category(models.Model):
@@ -74,7 +77,11 @@ class Category(models.Model):
     @property
     def cloudinary_image(self):
         return f"https://res.cloudinary.com/{os.environ.get('CLOUD_NAME', '')}/{self.image}"
-# Create your models here.
+    
+@receiver(pre_delete, sender=Category)
+def photo_delete(sender, instance, **kwargs):
+    cloudinary.uploader.destroy(instance.image.public_id)
+
 
 
 class Article(models.Model):
