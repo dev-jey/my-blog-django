@@ -49,7 +49,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(db_index=True, unique=True)
     is_active = models.BooleanField(default=True)
     bio = models.TextField(blank=True)
-    image = CloudinaryField('image')
+    image = CloudinaryField('image', folder='myblog/authors')
     is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -62,12 +62,16 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def cloudinary_image(self):
-        return f"https://res.cloudinary.com/dw675k0f5/image/upload/v1586256823/forongik3xq77zjpml66.png"
+        return f"https://res.cloudinary.com/dw675k0f5/image/upload/v1586256823/myblog/authors/forongik3xq77zjpml66.png"
+
+@receiver(pre_delete, sender=User)
+def photo_delete(sender, instance, **kwargs):
+    cloudinary.uploader.destroy(instance.image.public_id)
 
 
 class Category(models.Model):
     name = models.CharField(max_length=30)
-    image = CloudinaryField('image')
+    image = CloudinaryField('image',folder='avatars/categories')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -90,7 +94,7 @@ class Article(models.Model):
     category = models.ForeignKey(Category, related_name='articles',
                                  on_delete=models.CASCADE,
                                  blank=True, null=True)
-    image = CloudinaryField('image')
+    image = CloudinaryField('image', folder='myblog/articles')
     slug = models.SlugField(db_index=True, max_length=1000, default='',
                             editable=False,
                             unique=True, blank=True, primary_key=True)
@@ -143,6 +147,10 @@ def update_slug(sender,instance, signal, **kwargs):
         article.update(
             slug=new_slug
         )
+
+@receiver(pre_delete, sender=Article)
+def photo_delete(sender, instance, **kwargs):
+    cloudinary.uploader.destroy(instance.image.public_id)
 
 
 post_save.connect(update_slug, sender=Article)

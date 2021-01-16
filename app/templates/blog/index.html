@@ -182,7 +182,7 @@
                                     <div class="card-body">
                                         <ul class="category-tag-list">
                                             <li class="category-tag-name">
-                                                <a href="{% url 'app:article' latest_article.category.id %}">Lifestyle</a>
+                                                <a href="{% url 'app:category' latest_article.category.id %}">{{latest_article.category}}</a>
                                             </li>
                                         </ul>
                                         <h5 class="card-title title-font"><a href="{% url 'app:article' latest_article.slug %}">
