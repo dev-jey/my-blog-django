@@ -23,16 +23,16 @@ virtualenv -p python3 env  && source env/bin/activate
 
 Export environment variables
 ```
-export SECRET_KEY=ksksksd
-export CLOUD_NAME=ksksksd
-export API_KEY=ksksksd
-export API_SECRET=ksksksd
-export DB_NAME=llll
-export DB_USER=ksksksd
-export DB_PASS=ksksksd
-export DB_HOST=ksksksd
-export DB_PORT=ksksksd
-export CURRENT_BACKEND_URL=ksksksd
+source env/bin/activate
+export SECRET_KEY=seckey
+export CLOUD_NAME=cloudinary_name
+export API_KEY=cloudinary_api_key
+export API_SECRET=api_secret
+export DB_USER=db_user
+export DB_PASSWORD=db_pass
+export DB_HOST=localhost
+export DB_NAME=name_of_db
+export CURRENT_ENV=development
 ```
 
 Install dependencies
