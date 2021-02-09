@@ -1,0 +1,5 @@
+.env
+staticfiles/
+blog-app-db/
+__pycache__/
+*.pyc
