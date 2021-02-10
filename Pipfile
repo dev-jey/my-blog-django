@@ -5,7 +5,6 @@ name = "pypi"
 
 [packages]
 psycopg2-binary = "==2.8.5"
-django-heroku = "*"
 gunicorn = "*"
 django-tinymce = "*"
 readtime = "*"

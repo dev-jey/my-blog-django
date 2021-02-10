@@ -1,25 +1,5 @@
-version: '3.7'
-
+version: "3.1"
 services:
-  web:
-    restart: always
-    build: 
-      context: .
-      dockerfile: docker/backend/Dockerfile
-    entrypoint: ["/bin/bash", "-c", "/blog-app/docker/entry_point.sh"]
-    volumes:
-      - .:/blog-app
-    ports:
-      - 8000:8000
-    env_file:
-      - .env
-    image: blog-app
-    networks:
-      - back-end
-    depends_on: 
-      - database
-
-  
   database:
     restart: always
     image: postgres:10.1
@@ -29,12 +9,35 @@ services:
       - POSTGRES_DB=${DB_NAME}
     volumes:
       - ./blog-app-db:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    expose:
-      - "5432"
     networks:
       - back-end
-
-networks: 
+  
+  web:
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    ports:
+      - "8000:8000"
+    image: blog-app
+    volumes:
+      - .:/blog-app
+    depends_on:
+      - database
+    entrypoint: ["/bin/bash", "-c", "/blog-app/docker/entry_point.sh"]
+    stdin_open: true
+    tty: true
+    networks:
+      - back-end
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - API_KEY=${API_KEY}
+      - API_SECRET=${API_SECRET}
+      - CLOUD_NAME=${CLOUD_NAME}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_HOST=database
+      - DB_PORT=${DB_PORT}
+networks:
   back-end:

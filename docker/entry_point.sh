@@ -3,7 +3,6 @@
 
 source /root/.local/share/virtualenvs/blog-app-*/bin/activate
 
-
 # pipenv shell
 echo "<<<<<<<<<< Export LANG to the Env>>>>>>>>>>"
 
@@ -15,7 +14,7 @@ echo "<<<<<<<< Collect Staticfiles>>>>>>>>>"
 python manage.py collectstatic --noinput
 
 
-sleep 3
+sleep 10
 echo "<<<<<<<< Database Setup and Migrations Starts >>>>>>>>>"
 # Run database migrations
 python manage.py migrate
