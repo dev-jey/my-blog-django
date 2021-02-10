@@ -1,4 +1,4 @@
-.env
+.env*
 staticfiles/
 blog-app-db/
 __pycache__/

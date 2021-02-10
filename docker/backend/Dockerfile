@@ -15,7 +15,7 @@ RUN pip install --upgrade pip
 COPY ./Pipfile .
 COPY ./Pipfile.lock .
 RUN pip install --user pipenv
-RUN python3 -m pipenv install
+RUN python -m pipenv install
 
 FROM python:3.7-slim as app
 

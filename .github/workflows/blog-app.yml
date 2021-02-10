@@ -1,0 +1,112 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Blog application
+
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches: 
+      - "*"
+
+jobs:
+  run-tests:
+
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: github_actions
+        ports:
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: psycopg2 prerequisites
+      run: |
+        sudo apt-get install python-dev libpq-dev
+    - name: Install pipenv
+      uses: dschep/install-pipenv-action@v1
+
+    - name: Cache Pipenv virtualenv
+      uses: actions/cache@v1
+      id: pipenv-cache
+      with:
+        path: ~/.pipenv
+        key: ${{ runner.os }}-pipenv-v3-${{ hashFiles('**/Pipfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pipenv-v3-
+
+    - name: Install Dependencies
+      env:
+        PIPENV_NOSPIN: "true"
+        WORKON_HOME: ~/.pipenv/virtualenvs
+        PIPENV_CACHE_DIR: ~/.pipenv/pipcache
+      run: pipenv install --dev
+      if: steps.pipenv-cache.outputs.cache-hit != 'true'
+
+    - name: Lint with flake8
+      run: |
+        pipenv run flake8 .
+    - name: Test with Coverage
+      env:
+        PIPENV_NOSPIN: "true"
+        WORKON_HOME: ~/.pipenv/virtualenvs
+        DB_USER: postgres
+        DB_PASSWORD: postgres
+        DB_HOST: localhost
+        DB_NAME: github_actions
+        SECRET_KEY: very-secret-key
+        PYTHONPATH: "."
+        DJANGO_DEBUG: "False"
+      # pipenv run coverage run --source=app/api --rcfile=.coveragerc  manage.py test --verbosity=2
+      # pipenv run coverage report -m
+      run: |
+        pipenv run python manage.py runserver
+
+    # - name: Test with pytest
+    #   run: |
+    #     pytest
+  build-and-deploy-digital-ocean:
+    name: Deploy App
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Executing remote  command
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /home/jey/my-blog-django/
+            git fetch
+            git reset --hard origin/master
+            export SECRET_KEY=${{ secrets.SECRET_KEY}}
+            export CLOUD_NAME=${{ secrets.CLOUD_NAME}}
+            export API_KEY=${{ secrets.API_KEY}}
+            export API_SECRET='${{ secrets.API_SECRET}}'
+            export DB_NAME='${{ secrets.DB_NAME}}'
+            export DB_USER='${{ secrets.DB_USER}}'
+            export DB_PASS='${{ secrets.DB_PASS}}'
+            export DB_PORT=${{ secrets.DB_PORT}}
+            ls -al
+          # docker-compose build
+          # docker-compose up -d
+    # needs: [run-tests]
+
