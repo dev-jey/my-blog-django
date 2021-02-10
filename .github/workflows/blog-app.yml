@@ -106,7 +106,7 @@ jobs:
             export DB_PASS='${{ secrets.DB_PASS}}'
             export DB_PORT=${{ secrets.DB_PORT}}
             ls -al
-          # docker-compose build
-          # docker-compose up -d
+            docker-compose build
+            docker-compose up -d
     # needs: [run-tests]
 
