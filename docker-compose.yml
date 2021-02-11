@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: docker/backend/Dockerfile
     ports:
-      - "8000:8000"
+      - "8000:80"
     image: blog-app
     volumes:
       - .:/blog-app
@@ -46,7 +46,7 @@ services:
       context: .
       dockerfile: nginx/nginx.Dockerfile
     ports:
-      - "80:80"
+      - "8003:80"
     networks:
       - back-end
     depends_on:
@@ -54,7 +54,7 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - static_volume:/blog-app/static/
-      - /etc/letsencrypt/live/blog.devjey.com/ :/etc/nginx/certs/
+      # - /etc/ :/etc/nginx/certs/
     restart: always
 
 networks:
@@ -62,3 +62,4 @@ networks:
 
 volumes:
   static_volume:
+
